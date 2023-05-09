@@ -1,0 +1,49 @@
+let name: string
+  let age: number
+  let dateOfBirth: number | string
+  let isStudent: boolean
+  let hobbies: string[]
+  let role: [number, string]
+  let num: any // any data type
+  let persontype: unknown // any data type
+
+  type Person = {
+    name: string,
+    age?: number // optional
+  }
+
+  type SomeGuy = Person & {
+    professor: string
+  }
+
+  interface AnotherPerson {
+    name: string,
+    age: number
+  }
+
+  interface ThirdPerson extends SomeGuy {
+    someone: string
+  }
+
+  interface Guy extends AnotherPerson {
+    professor: string
+  }
+  
+  let person: Person = {
+    name: 'Prathamesh',
+    age: 24
+  }
+
+  let lotsOfPeople: Person[]
+
+
+  // function printName(name: string){
+  //   console.log(name)
+  // }
+  // printName("Prathamesh")
+
+  let printName: (name: string) => void;
+  // let function_name: (parameter_name: parameter_type) => return type
+
+  // void -> returns undefined
+  // never -> returns nothing
